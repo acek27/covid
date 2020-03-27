@@ -11,7 +11,7 @@
 <!-- Bootstrap fremwork main css -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/bootstrap.min.css')}}">
 <!-- nivo slider CSS -->
-<link rel="stylesheet" href="{{asset('/tema/frontend/lib/css/nivo-slider.css')}}" />
+<link rel="stylesheet" href="{{asset('/tema/frontend/lib/css/nivo-slider.css')}}"/>
 <!-- This core.css file contents all plugings css file. -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/core.css')}}">
 <link rel="stylesheet" href="{{asset('/tema/dist/css/adminlte.min.css')}}">
