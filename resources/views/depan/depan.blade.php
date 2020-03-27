@@ -296,7 +296,6 @@
         </div>
     </div>
     <!-- FEATURED FLAT AREA END -->
-
     <!-- FEATURES AREA START -->
     <div class="features-area fix">
         <div class="container-fluid">
