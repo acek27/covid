@@ -31,6 +31,8 @@
 
 Route::get('/', 'IndexDepanController@index');
 
+Route::get('/getrujukan', 'IndexDepanController@get_rujukan')->name('get.rujukan');
+
 // Berita-----------------------------------------------------------------------------------
 
 Route::get('/berita', 'PageController@indexberita'); //tanpilan list berita
@@ -87,27 +89,23 @@ Route::get('/download/json','PageController@json')->name('get.download');
 
 //Auth::routes();
 
-Route::get('/webmin`', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+// Route::get('/webmin`', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
 
-Route::post('/webmin', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+// Route::post('/webmin', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 
-Route::post('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+// Route::post('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
-Route::get('/panel/covid', 'CovidController@index');
-Route::get('/panel/covid/{x}/edit', 'CovidController@edit');
-Route::post('/panel/covid/update', 'CovidController@update');
-Route::post('/panel/covid/indexpost', 'CovidController@indexpost');
-Route::get('/panel/covid/indextanggal/{x}', 'CovidController@indextanggal');
+
 
 // Routing untuk authentifikasi
-// Route::group(['namespace' => 'Auth'],function(){
-// 	Route::get('/webmin','LoginController@showLoginForm')->name('login');
-//     Route::post('/webmin','LoginController@login')->name('login.post');
-//     Route::get('/logout',function(){
-//         Auth::logout();
-//         return redirect('/');
-//     })->name('logout');  
-// });
+Route::group(['namespace' => 'Auth'],function(){
+	Route::get('/webmin','LoginController@showLoginForm')->name('login');
+    Route::post('/webmin','LoginController@login')->name('login.post');
+    Route::post('/logout',function(){
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');  
+});
 
 // Auth::routes();
 
@@ -122,6 +120,11 @@ Route::group(['middleware' => ['web','auth']], function(){
 	// Route::resource('/panel/info', 'InfoController');
 
 	// Route::resource('/panel/dokumen', 'FileController');		
+	Route::get('/panel/covid', 'CovidController@index');
+Route::get('/panel/covid/{x}/edit', 'CovidController@edit');
+Route::post('/panel/covid/update', 'CovidController@update');
+Route::post('/panel/covid/indexpost', 'CovidController@indexpost');
+Route::get('/panel/covid/indextanggal/{x}', 'CovidController@indextanggal');
 
 });
 

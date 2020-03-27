@@ -8,7 +8,7 @@
 <!-- All js plugins included in this file. -->
 <script src="{{asset('/tema/frontend/js/plugins.js')}}"></script>
 <!-- Maplace-active -->
-<script src="{{asset('/tema/frontend/js/maplace-active.js')}}"></script>
+{{--<script src="{{asset('/tema/frontend/js/maplace-active.js')}}"></script>--}}
 <!-- Google Map js -->
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCyz35pK5Ccrp8a58PJSEO9vhLC6WU3FvU&libraries=drawing,geometry"></script>
 {{--<script src="{{asset('/tema/frontend/js/google-map.js')}}"></script>--}}

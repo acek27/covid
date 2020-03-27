@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="{{asset('/tema/frontend/lib/css/nivo-slider.css')}}" />
 <!-- This core.css file contents all plugings css file. -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/core.css')}}">
+<link rel="stylesheet" href="{{asset('/tema/dist/css/adminlte.min.css')}}">
 <!-- Theme shortcodes/elements style -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/shortcode/shortcodes.css')}}">
 <!-- Theme main style -->

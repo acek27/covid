@@ -8,35 +8,93 @@
 
 <!-- Start page content -->
 <section id="page-content" class="page-wrapper">
+	<br>
+        <div class="section-title-2 text-center">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{$total->jml_odp + $total->jml_pdp + $total->jml_positif}}</h3>
 
+                            <p style="color: white">Total Kasus Kab. Situbondo</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{$total->jml_odp}}</h3>
+
+                            <p style="color: white">Kasus ODP</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{$total->jml_pdp}}</h3>
+
+                            <p style="color: black">Kasus PDP</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{$total->jml_positif}}</h3>
+
+                            <p style="color: white">Kasus Positif</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	<br><br>
     <!-- ABOUT SHELTEK AREA START -->
-    <div class="about-sheltek-area ptb-115">
+     <!-- <div class="about-sheltek-area ptb-115"> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
                     <div class="section-title mb-30">
-                        <h3>SATGAS</h3>
+                        <h3>Apa Itu</h3>
                         <h2>COVID-19</h2>
                     </div>
                     <div class="about-sheltek-info">
-                        <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for elit, sed do
-                            eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo.</p>
-                        <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
-                            sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                        <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
-                            sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
+                        <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Pneumonia Coronavirus Disease 2019 atau COVID-19</span> adalah penyakit peradangan paru yang disebabkan oleh Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2). Gejala klinis yang muncul beragam, mulai dari seperti gejala flu biasa (batuk, pilek, nyeri tenggorok, nyeri otot, nyeri kepala) sampai yang berkomplikasi berat (pneumonia atau sepsis). </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
-                    <div class="about-image">
-                        <a href="about.html"><img src="images/about/1.jpg" alt=""></a>
+                    <div class="section-title mb-30">
+                        <h3>Bagaimana</h3>
+                        <h2>COVID-19 Menular ?</h2>
+                    </div>
+                    <div class="about-sheltek-info">
+                        <p>Cara penularan SARS-CoV-2 penyebab <span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">COVID-19</span> ialah melalui kontak dengan droplet saluran napas penderita. Droplet merupakan partikel kecil dari mulut penderita yang mengandung kuman penyakit, yang dihasilkan pada saat batuk, bersin, atau berbicara. Droplet dapat melewati sampai jarak tertentu (biasanya 1 meter).</p>
+                        <p>Droplet bisa menempel di pakaian atau benda di sekitar penderita pada saat batuk atau bersin. Namun, partikel droplet cukup besar sehingga tidak akan bertahan atau mengendap di udara dalam waktu yang lama. Oleh karena itu, orang yang sedang sakit, diwajibkan untuk menggunakan masker untuk mencegah penyebaran droplet. Untuk penularan melalui makanan, sampai saat ini belum ada bukti ilmiahnya.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+     <!-- </div> -->
     <!-- ABOUT SHELTEK AREA END -->
 
     <!-- SERVICES AREA START -->
@@ -146,18 +204,18 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-12">
                     <div class="section-title text-white">
-                        <h3>BOOK YOUR</h3>
-                        <h2 class="h1">HOME HERE</h2>
+                        <h3>AYO !</h3>
+                        <h2 class="h1">MARI BERSAMA - SAMA</h2>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="booking-conternt clearfix">
                         <div class="book-house text-white">
-                            <h2>BOOK YO`UR APPARTMENT OR HOUSE </h2>
-                            <h2 class="h5">CALL US ON : +0123 456 789 </h2>
+                            <h2>Jaga Keluarga Dan Bangsa Indonesia </h2>
+                            <h2 class="h5">Dengan Mencegah Penularan COVID-19 </h2>
                         </div>
                         <div class="booking-imgae">
-                            <img src="images/others/booking.png" alt="">
+                            <img src="{{asset('/tema/covid/masker.png')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -183,32 +241,17 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="flat-item">
                             <div class="flat-item-image">
-                                <span class="for-sale">For Sale</span>
-                                <a href="properties-details.html"><img src="images/flat/1.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="properties-details.html">More Details</a>
-                                </div>
+                                <a href="#"><img src="{{asset('/tema/covid/pasien2.png')}}" alt=""></a>
                                 <ul class="flat-desc">
                                     <li>
-                                        <img src="images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/6.png" alt="">
-                                        <span>3</span>
+                                        <h2><span style="color: #fff">ODP</span></h2>
                                     </li>
                                 </ul>
                             </div>
                             <div class="flat-item-info">
                                 <div class="flat-title-price">
-                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
+                                    <h5>Orang Dalam Pemantauan</h5>
                                 </div>
-                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                             </div>
                         </div>
                     </div>
@@ -216,31 +259,17 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="flat-item">
                             <div class="flat-item-image">
-                                <a href="properties-details.html"><img src="images/flat/2.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="properties-details.html">More Details</a>
-                                </div>
+                                <a href="#"><img src="{{asset('/tema/covid/pasienx.png')}}" alt=""></a>
                                 <ul class="flat-desc">
                                     <li>
-                                        <img src="images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/6.png" alt="">
-                                        <span>3</span>
+                                        <h2><span style="color: #fff">PDP</span></h2>
                                     </li>
                                 </ul>
                             </div>
                             <div class="flat-item-info">
                                 <div class="flat-title-price">
-                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
+                                    <h5>Pasien Dalam Pengawasan</h5>
                                 </div>
-                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                             </div>
                         </div>
                     </div>
@@ -248,32 +277,17 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="flat-item">
                             <div class="flat-item-image">
-                                <span class="for-sale rent">For rent</span>
-                                <a href="properties-details.html"><img src="images/flat/3.jpg" alt=""></a>
-                                <div class="flat-link">
-                                    <a href="properties-details.html">More Details</a>
-                                </div>
+                                <a href="#"><img src="{{asset('/tema/covid/pasien.png')}}" alt=""></a>
                                 <ul class="flat-desc">
                                     <li>
-                                        <img src="images/icons/4.png" alt="">
-                                        <span>450 sqft</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/5.png" alt="">
-                                        <span>5</span>
-                                    </li>
-                                    <li>
-                                        <img src="images/icons/6.png" alt="">
-                                        <span>3</span>
+                                        <h2><span style="color: #fff">Confirm</span></h2>
                                     </li>
                                 </ul>
                             </div>
                             <div class="flat-item-info">
                                 <div class="flat-title-price">
-                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                    <span class="price">$52,350</span>
+                                    <h5>Pasien Mengidap Corona</h5>
                                 </div>
-                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
                             </div>
                         </div>
                     </div>
@@ -289,52 +303,24 @@
             <div class="row">
                 <div class="col-lg-7 offset-lg-5">
                     <div class="features-info bg-gray">
-                        <div class="section-title mb-30">
-                            <h3>HERE IS</h3>
-                            <h2 class="h1">AWESOME FEATUES</h2>
+                        <div class="features-desc">
+                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">ODP</span> adalah singkatan dari Orang Dalam Pemantauan. Seseorang yang mengalami demam (≥38⁰C) atau riwayat demam; atau gejala gangguan sistem pernapasan seperti pilek/sakit tenggorokan/batuk dan 14 hari terakhir sebelum timbul gejala memiliki riwayat perjalanan atau tinggal di luar negeri yang melaporkan transmisi local atau di area transmisi lokal di Indonesia.</p>
                         </div>
                         <div class="features-desc">
-                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for elit, sed do
-                                eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do smod tempor
-                                incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation
-                                oris nisi</p>
+                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">PDP</span> adalah singkatan dari Pasien Dalam Pengawasan. Seseorang dengan demam (≥38⁰C), disertai salah satu gejala/tanda penyakit pernapasan seperti: batuk/ sesak nafas/ sakit tenggorokan/ pilek/ pneumonia ringan hingga berat dan 14 hari terakhir sebelum timbul gejala memiliki riwayat :</p>
                         </div>
                         <div class="features-include">
                             <div class="row">
                                 <div class="col-xl-4 col-lg-6 col-md-4">
                                     <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Fully Furnished</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                        <h6>Kasus Probabel</h6>
+                                        <p>Pasien dalam pengawasan yang diperiksa untuk COVID-19 tetapi inkonklusif (tidak dapat disimpulkan).</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-6 col-md-4">
                                     <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Royal Touch Paint</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-4">
-                                    <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Latest Interior Design</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-4">
-                                    <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Non Stop Security</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-4">
-                                    <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Living Inside a Nature</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-md-4">
-                                    <div class="features-include-list">
-                                        <h6><img src="images/icons/7.png" alt="">Luxurious Fittings</h6>
-                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                        <h6>Kasus Konfirmasi</h6>
+                                        <p>Seseorang terinfeksi COVID-19 dengan hasil pemeriksaan laboratorium positif.</p>
                                     </div>
                                 </div>
                             </div>
@@ -353,177 +339,23 @@
                 <div class="col-12">
                     <div class="section-title-2 text-center">
                         <h2>RUJUKAN</h2>
-                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
-                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
-                            minim veniam, quis nostrud</p>
+                        <p>Rumah sakit Rujukan Covid-19 di Jawa Timur</p>
                     </div>
                 </div>
             </div>
             <div class="our-agents">
                 <div class="row">
                     <div class="col-12">
-                        <div class="agents-carousel">
-                            <!-- single-agent -->
-                            <div class="col">
-                                <div class="single-agent">
-                                    <div class="agent-image">
-                                        <img src="images/agents/1.jpg" alt="">
-                                    </div>
-                                    <div class="agent-info">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Shah M Nawaz</a></h5>
-                                            <p>Real Estate Agent</p>
-                                        </div>
-                                    </div>
-                                    <div class="agent-info-hover">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Shah M Nawaz</a></h5>
-                                            <p>Real Estate Agent</p>
-                                        </div>
-                                        <ul class="agent-address">
-                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
-                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
-                                            </li>
-                                        </ul>
-                                        <ul class="social-media">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-agent -->
-                            <div class="col">
-                                <div class="single-agent">
-                                    <div class="agent-image">
-                                        <img src="images/agents/2.jpg" alt="">
-                                    </div>
-                                    <div class="agent-info">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Eva Sharlin</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                    </div>
-                                    <div class="agent-info-hover">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Eva Sharlin</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                        <ul class="agent-address">
-                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
-                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
-                                            </li>
-                                        </ul>
-                                        <ul class="social-media">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-agent -->
-                            <div class="col">
-                                <div class="single-agent">
-                                    <div class="agent-image">
-                                        <img src="images/agents/3.jpg" alt="">
-                                    </div>
-                                    <div class="agent-info">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                    </div>
-                                    <div class="agent-info-hover">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                        <ul class="agent-address">
-                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
-                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
-                                            </li>
-                                        </ul>
-                                        <ul class="social-media">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-agent -->
-                            <div class="col">
-                                <div class="single-agent">
-                                    <div class="agent-image">
-                                        <img src="images/agents/4.jpg" alt="">
-                                    </div>
-                                    <div class="agent-info">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
-                                            <p>Real Estate Agent</p>
-                                        </div>
-                                    </div>
-                                    <div class="agent-info-hover">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
-                                            <p>Real Estate Agent</p>
-                                        </div>
-                                        <ul class="agent-address">
-                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
-                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
-                                            </li>
-                                        </ul>
-                                        <ul class="social-media">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-agent -->
-                            <div class="col">
-                                <div class="single-agent">
-                                    <div class="agent-image">
-                                        <img src="images/agents/3.jpg" alt="">
-                                    </div>
-                                    <div class="agent-info">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                    </div>
-                                    <div class="agent-info-hover">
-                                        <div class="agent-name">
-                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
-                                            <p>Real Estate Broker</p>
-                                        </div>
-                                        <ul class="agent-address">
-                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
-                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
-                                            </li>
-                                        </ul>
-                                        <ul class="social-media">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-bordered table-hover table-sm" id="table-rujukan" width="100%" cellspacing="0">
+                            <thead style="background-color:#eaeaea">
+                                <tr>
+                                    <th width="20px" style="vertical-align: text-top; text-align: center;">NO</th>
+                                    <th width="400px" style="vertical-align: text-top; text-align: center;">NAMA</th>
+                                    <th width="200px" style="vertical-align: text-top; text-align: center;">KAB/KOT</th>
+                                </tr>
+                            </thead>
+
+                        </table>
                     </div>
                 </div>
             </div>
@@ -540,59 +372,108 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-9">
                                 <div class="section-title mb-30">
-                                    <h3>SOME OF OUR</h3>
-                                    <h2 class="h1">HAPPY CLIENTS</h2>
+                                    <h2 class="h1">Melindungi Diri dari COVID-19</h2>
+                                    <h3>Hal yang Harus Dilakukan :</h3>
                                 </div>
                                 <div class="testimonial-carousel dots-right-btm">
                                     <!-- testimonial-item -->
                                     <div class="testimonial-item">
+                                        <h6>Batuk</h6>
                                         <div class="testimonial-brief">
-                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
-                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
-                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
-                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
-                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
-                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
-                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            <p>Tutup Mulut dan hidung saat batuk atau bersin dengan tissue. 
+                                                Buang tissue pada tempat sampah tertutup.
                                             </p>
                                         </div>
-                                        <h6>Zasica Luci, <span>CEO</span></h6>
+                                        <h6></h6>
                                     </div>
                                     <!-- testimonial-item -->
                                     <div class="testimonial-item">
+                                        <h6>GUNAKAN MASKER</h6>
                                         <div class="testimonial-brief">
-                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
-                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
-                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
-                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
-                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
-                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
-                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            <p>Kenakan masker hanya jika Anda sakit. Ganti secara berkala dan tetap tinggal di rumah, atau segera ke fasilitas kesehatan.
                                             </p>
                                         </div>
-                                        <h6>Zasica Luci, <span>CEO</span></h6>
                                     </div>
                                     <!-- testimonial-item -->
                                     <div class="testimonial-item">
+                                        <h6>CUCI TANGAN</h6>
                                         <div class="testimonial-brief">
-                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
-                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
-                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
-                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
-                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
-                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
-                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            <p>Cuci tangan dengan sabun dan air minimal 20 detik atau gunakan hand sanitizer berbasis alkohol minimal 60%.
                                             </p>
                                         </div>
-                                        <h6>Zasica Luci, <span>CEO</span></h6>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>KEBERSIHAN</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Bersihkan dan lakukan disinfeksi permukaan benda yang sering disentuh.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>POLA HIDUP SEHAT</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Tetap pola hidup sehat dengan makanan bergizi dan olahraga.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-3">
-                                <div class="testimonial-image">
-                                    <img src="images/others/testimonial.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-area pb-115">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonial">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-9">
+                                <div class="section-title mb-30">
+                                    <h2 class="h1">Melindungi Diri dari COVID-19</h2>
+                                    <h3>Hal yang Tidak Boleh Dilakukan :</h3>
                                 </div>
-                            </div>
+                                <div class="testimonial-carousel dots-right-btm">
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>BEPERGIAN</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Bepergian ke luar rumah saat sedang sakit.
+                                            </p>
+                                        </div>
+                                        <h6></h6>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>MASKER</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Menimbun Masker.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>LINGKUNGAN</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Berada dekat dengan orang yang sedang sakit, batuk atau bersin.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <h6>SENTUHAN</h6>
+                                        <div class="testimonial-brief">
+                                            <p>Menyentuh mata, hidung, atau mulut dengan telapak tangan.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -608,83 +489,67 @@
                 <div class="col-12">
                     <div class="section-title-2 text-center">
                         <h2>Berita</h2>
-                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
-                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
-                            minim veniam, quis nostrud</p>
+                        <p>Informasi terkait COVID-19</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="blog-carousel">
+                        @foreach($posts1 as $berita1)
                         <!-- blog-item -->
                         <div class="col">
                             <article class="blog-item bg-gray">
                                 <div class="blog-image">
-                                    <a href="single-blog.html"><img src="images/blog/1.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset($berita1->gambar)}}" alt=""></a>
                                 </div>
                                 <div class="blog-info">
                                     <div class="post-title-time">
-                                        <h5><a href="single-blog.html">Maridland de Villa</a></h5>
-                                        <p>July 30, 2017 / 10 am</p>
+                                        <h5><a href="{{url('berita/'.$berita1->slug)}}">{{$berita1->judul}}</a></h5>
+                                        <?php
+                                            $tgl = date('d', strtotime($berita1->tgl_buat));
+                                            $bln = date('M', strtotime($berita1->tgl_buat));
+                                            $thn = date('Y', strtotime($berita1->tgl_buat));
+                                        ?>
+                                        <p>{{$bln}} {{$tgl}}, {{$thn}}</p>
                                     </div>
-                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
-                                        praising pain wasnad I will give you a complete pain was praising</p>
-                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                    <p>{!! Str::words($berita1->berita, 15,' ....</p>')  !!}</p>
+                                    <a class="read-more" href="{{url('berita/'.$berita1->slug)}}">Read more</a>
                                 </div>
                             </article>
                         </div>
+                        @endforeach
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog-carousel">
+                        @foreach($posts2 as $berita2)
                         <!-- blog-item -->
                         <div class="col">
                             <article class="blog-item bg-gray">
                                 <div class="blog-image">
-                                    <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset($berita2->gambar)}}" alt=""></a>
                                 </div>
                                 <div class="blog-info">
                                     <div class="post-title-time">
-                                        <h5><a href="single-blog.html">Latest Design House</a></h5>
-                                        <p>July 30, 2017 / 10 am</p>
+                                        <h5><a href="{{url('berita/'.$berita2->slug)}}">{{$berita2->judul}}</a></h5>
+                                        <?php
+                                            $tgl = date('d', strtotime($berita2->tgl_buat));
+                                            $bln = date('M', strtotime($berita2->tgl_buat));
+                                            $thn = date('Y', strtotime($berita2->tgl_buat));
+                                        ?>
+                                        <p>{{$bln}} {{$tgl}}, {{$thn}}</p>
                                     </div>
-                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
-                                        praising pain wasnad I will give you a complete pain was praising</p>
-                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                    <p>{!! Str::words($berita2->berita, 15,' ....</p>')  !!}</p>
+                                    <a class="read-more" href="{{url('berita/'.$berita2->slug)}}">Read more</a>
                                 </div>
                             </article>
                         </div>
-                        <!-- blog-item -->
-                        <div class="col">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="single-blog.html"><img src="images/blog/3.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="single-blog.html">Duplex Villa House</a></h5>
-                                        <p>July 30, 2017 / 10 am</p>
-                                    </div>
-                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
-                                        praising pain wasnad I will give you a complete pain was praising</p>
-                                    <a class="read-more" href="single-blog.html">Read more</a>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- blog-item -->
-                        <div class="col">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="single-blog.html">Latest Design House</a></h5>
-                                        <p>July 30, 2017 / 10 am</p>
-                                    </div>
-                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
-                                        praising pain wasnad I will give you a complete pain was praising</p>
-                                    <a class="read-more" href="single-blog.html">Read more</a>
-                                </div>
-                            </article>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>
@@ -692,77 +557,19 @@
     </div>
     <!-- BLOG AREA END -->
 
-    <!-- BRAND AREA START -->
-    <div class="brand-area pb-115">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="brand-carousel">
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/1.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/2.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/3.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/4.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/5.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/1.png" alt="">
-                            </div>
-                        </div>
-                        <!-- brand-item -->
-                        <div class="col">
-                            <div class="brand-item">
-                                <img src="images/brand/4.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- BRAND AREA END -->
-
     <!-- SUBSCRIBE AREA START -->
     <div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-12">
                     <div class="section-title text-white">
-                        <h3>SUBSCRIBE</h3>
-                        <h2 class="h1">NEWSLETTER</h2>
+                        <h3>Himbauan Tentang</h3>
+                        <h2 class="h1">Covid-19</h2>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="subscribe">
-                        <form action="#">
-                            <input type="text" name="subscribe" placeholder="Enter yur email here...">
-                            <button type="submit" value="send">Send</button>
-                        </form>
+                        <span style="color: #fff">Saudara sekalian, mulai sekarang jangan hiraukan informasi mengenai Covid-19 yang berseliweran di grup WA, atau broadcast WA, atau media sosial lainnya. Pantau info Covid-19 di situs resmi yang bisa dipertanggungjawabkan.</span>
                     </div>
                 </div>
             </div>
@@ -774,7 +581,9 @@
 @endsection
 
 @push('script')
-    <script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
         function initialize() {
             geocoder = new google.maps.Geocoder();
             var mapOptions = {
@@ -800,10 +609,14 @@
             var odp{{$values->kd_kec}} = "{{$values->jml_odp}}";
             var pdp{{$values->kd_kec}} = "{{$values->jml_pdp}}";
             var positif{{$values->kd_kec}} = "{{$values->jml_positif}}";
-            var keterangan = '<Strong>' + nama{{$values->kd_kec}}+ '</Strong><br><Strong style="color:#17a2b8">'
-                + 'ODP :' + odp{{$values->kd_kec}}+ '</Strong><br><Strong style="color:#ffc107">'
-                + 'PDP :' + pdp{{$values->kd_kec}}+ '</Strong><br><Strong style="color:#dc3545">'
-                + 'Positif :' + positif{{$values->kd_kec}}+ '</Strong>'
+                       var keterangan = '<Strong style="font-size:18px">' + nama{{$values->kd_kec}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:18px">'
+                + 'ODP :  ' + odp{{$values->kd_kec}}+ '</Strong>' +
+                '<br><Strong style="color:#ffc107;font-size:18px">'
+                + 'PDP :  ' + pdp{{$values->kd_kec}}+ '</Strong>' +
+                '<br><Strong style="color:#dc3545;font-size:18px">'
+                + 'Positif :  ' + positif{{$values->kd_kec}}+ '</Strong>';
+
             var icon = {
                 url: "{{asset('tema/frontend/images/icons/mark place-01.png')}}", // url
                 scaledSize: new google.maps.Size(28, 40), // scaled size
@@ -916,5 +729,112 @@
         }
         // event jendela di-load
         google.maps.event.addDomListener(window, 'load', initialize);
+
+        $(document).ready(function()
+        {    
+
+        var table = $('#table-rujukan').DataTable({
+            fixedHeader: true,
+            ordering:  false,
+            searching: false,
+            lengthChange: false,
+            pageLength: 20,
+            dom: 'Bfrtip',
+            destroy: true,
+            ajax: {
+                url: '{{route('get.rujukan')}}',
+                //contentType: "application/json; charset=utf-8",
+                type: "GET",
+                dataType: "json",
+                success: function (data) 
+                {
+                    table.clear();
+                    var i = 1;
+                    $.each(data, function(id, val) 
+                    {                        
+                        table.row.add({
+                        "no":i,
+                        "nama":val['nama'],
+                        "kota":val['kota']
+                        }).draw();
+                        i = i + 1;
+                        table.row.find
+                    });
+                }
+            },
+            columns: [
+                { "data": "no" },
+                { "data": "nama" },
+                { "data": "kota" }
+            ],
+            initComplete: function () {
+                this.api().columns().every(function () {
+                    var column = this;
+                    var input = document.createElement("input");
+                    $(input).appendTo($(column.footer()).empty())
+                    .on('change', function () {
+                        column.search($(this).val()).draw();
+                    });
+                });
+            }
+
+          });     
+            //----
+            // $.ajax({
+            //     url: '{{route('get.rujukan')}}',
+            //     //contentType: "application/json; charset=utf-8",
+            //     type: "GET",
+            //     dataType: "json",
+                
+            //     success: function (data) 
+            //     {
+            //         var table = $('#table-rujukan').DataTable({
+            //         fixedHeader: true,
+            //         ordering:  false,
+            //         searching: false,
+            //         lengthChange: false,
+            //         pageLength: 20,
+            //         dom: 'Bfrtip',
+            //         destroy: true,
+            //         buttons: [
+                    
+            //         ],
+            //         "drawCallback": function( settings ) {
+            //             var api = this.api();
+        
+            //             // Output the data for the visible rows to the browser's console
+            //             console.log( api.rows( {page:'current'} ).data() );
+
+            //         },
+            //         "createdRow": function (row, data, index) {
+                        
+            //         },
+            //         columns: [
+            //         { "data": "no" },
+            //         { "data": "nama" },
+            //         { "data": "kota" }
+            //         ]
+            //         });
+
+            //         table.clear();
+
+            //         var result = jQuery.parseJSON(JSON.stringify(data));
+            //         //console.log(result);
+            //         var i = 1;
+            //         $.each(result, function(id, val) 
+            //         {
+                        
+            //             table.row.add({
+            //             "no":i,
+            //             "nama":val['nama'],
+            //             "kota":val['kota']
+            //             }).draw();
+            //             i = i + 1;
+            //             table.row.find
+            //         });
+            //     }
+            //     });
+
+        });
     </script>
 @endpush
