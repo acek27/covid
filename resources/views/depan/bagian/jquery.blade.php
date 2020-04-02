@@ -14,4 +14,6 @@
 {{--<script src="{{asset('/tema/frontend/js/google-map.js')}}"></script>--}}
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="{{asset('/tema/frontend/js/main.js')}}"></script>
+<script src="{{asset('/tema/map/geoxml3.js')}}"></script>
+
 @stack('script')

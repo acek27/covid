@@ -31,26 +31,42 @@ class IndexDepanController extends Controller
     {
         $almt = Alamat::findOrFail(1);
 
-        $menus = Mainmenu::with('children')->where('parent','=',0)->orderBy('urutan')->get();
+        $menus = Mainmenu::with('children')->where('parent', '=', 0)->orderBy('urutan')->get();
 
-        $posts1 = Post::where('status', 'publish')->orderBy('tgl_buat','desc')->skip(0)->take(3)->get();
+        $posts1 = Post::where('status', 'publish')->orderBy('tgl_buat', 'desc')->skip(0)->take(3)->get();
 
-        $posts2 = Post::where('status', 'publish')->orderBy('tgl_buat','desc')->skip(3)->take(3)->get();
+        $posts2 = Post::where('status', 'publish')->orderBy('tgl_buat', 'desc')->skip(3)->take(3)->get();
 
         $data = DB::table('v_covid')->get();
-		
-		$total = DB::table('v_jumlah')->first();
-       
-		
-        return view('depan.depan', compact('almt','menus','data','posts1','posts2','total'));
+
+        $total = DB::table('v_jumlah')->first();
+
+
+        return view('depan.depan', compact('almt', 'menus', 'data', 'posts1', 'posts2', 'total'));
 //        return response()->json($data);
     }
 
-    public function get_rujukan(){
+    public function get_rujukan()
+    {
         $url = 'http://infocovid19.jatimprov.go.id/index.php/home/getListRujukan';
         $Client = new Client(['headers' => [
             'x-api-version' => '2',
-            'Accept'        => 'application/json'
+            'Accept' => 'application/json'
+        ]]);
+        $response = $Client->get($url);
+        $result = json_decode((string)$response->getBody()->getContents(), true);
+
+        // $data = json_encode($result);
+
+        return response()->json($result);
+    }
+
+    public function get_map()
+    {
+        $url = 'https://corona.banyuwangikab.go.id/front/data_sebaran';
+        $Client = new Client(['headers' => [
+            'x-api-version' => '2',
+            'Accept' => 'application/json'
         ]]);
         $response = $Client->get($url);
         $result = json_decode((string)$response->getBody()->getContents(), true);

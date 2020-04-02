@@ -1,10 +1,11 @@
 @extends('depan.bagian.page')
-@push('css')
 @section('content')
     <!-- DICECTORY LISTING GOOGLE MAP AREA START -->
     <div class="directory-listing-google-map-area">
         <div id="gmap"></div>
+        {{--        <div id="map"></div>--}}
     </div>
+
     <!-- DICECTORY LISTING GOOGLE MAP AREA START -->
 
     <!-- Start page content -->
@@ -643,6 +644,16 @@
                     alert('Geocoder failed due to: ' + status);
                 });
             });
+
+            //Parse FILE KML dengan menggunakan geoxml3.js
+            var geoXml = new geoXML3.parser({
+                suppressInfoWindows: true,
+                preserveViewport: false,
+                map: map
+            });
+            {{--/** letak file kml */--}}
+            geoXml.parse("{{asset('tema/map/situbondokab.kml')}}");
+
             @foreach($data as $values)
                 x{{$values->kd_kec}} = "{{$values->latitude}}";
             y{{$values->kd_kec}} = "{{$values->longitude}}";
@@ -659,7 +670,7 @@
                 + 'Positif :  ' + positif{{$values->kd_kec}}+ '</Strong>';
 
             var icon = {
-                url: "{{asset('tema/frontend/images/icons/mark place-01.png')}}", // url
+                url: "{{asset('tema/frontend/images/icons/mark-place-04.png')}}", // url
                 scaledSize: new google.maps.Size(28, 40), // scaled size
                 origin: new google.maps.Point(0, 0), // origin
                 anchor: new google.maps.Point(0, 0), // anchor
@@ -672,12 +683,13 @@
                 html: keterangan,
                 labelClass: "labels",
                 label: {
-                    color: '#A52A2A',
-                    fontSize : '10px',
+                    color: 'white',
+                    fontSize: '10px',
                     fontWeight: "bold",
                     text: nama{{$values->kd_kec}}
                 }
             });
+
             var infowindow = new google.maps.InfoWindow();
             google.maps.event.addListener(loc, 'click', function (event) {
                 infowindow.setContent(this.html);
@@ -779,109 +791,6 @@
 
         // event jendela di-load
         google.maps.event.addDomListener(window, 'load', initialize);
-
-        $(document).ready(function () {
-
-            var table = $('#table-rujukan').DataTable({
-                fixedHeader: true,
-                ordering: false,
-                searching: false,
-                lengthChange: false,
-                pageLength: 20,
-                dom: 'Bfrtip',
-                destroy: true,
-                ajax: {
-                    url: '{{route('get.rujukan')}}',
-                    //contentType: "application/json; charset=utf-8",
-                    type: "GET",
-                    dataType: "json",
-                    success: function (data) {
-                        table.clear();
-                        var i = 1;
-                        $.each(data, function (id, val) {
-                            table.row.add({
-                                "no": i,
-                                "nama": val['nama'],
-                                "kota": val['kota']
-                            }).draw();
-                            i = i + 1;
-                            table.row.find
-                        });
-                    }
-                },
-                columns: [
-                    {"data": "no"},
-                    {"data": "nama"},
-                    {"data": "kota"}
-                ],
-                initComplete: function () {
-                    this.api().columns().every(function () {
-                        var column = this;
-                        var input = document.createElement("input");
-                        $(input).appendTo($(column.footer()).empty())
-                            .on('change', function () {
-                                column.search($(this).val()).draw();
-                            });
-                    });
-                }
-
-            });
-            //----
-            // $.ajax({
-            //     url: '{{route('get.rujukan')}}',
-            //     //contentType: "application/json; charset=utf-8",
-            //     type: "GET",
-            //     dataType: "json",
-
-            //     success: function (data) 
-            //     {
-            //         var table = $('#table-rujukan').DataTable({
-            //         fixedHeader: true,
-            //         ordering:  false,
-            //         searching: false,
-            //         lengthChange: false,
-            //         pageLength: 20,
-            //         dom: 'Bfrtip',
-            //         destroy: true,
-            //         buttons: [
-
-            //         ],
-            //         "drawCallback": function( settings ) {
-            //             var api = this.api();
-
-            //             // Output the data for the visible rows to the browser's console
-            //             console.log( api.rows( {page:'current'} ).data() );
-
-            //         },
-            //         "createdRow": function (row, data, index) {
-
-            //         },
-            //         columns: [
-            //         { "data": "no" },
-            //         { "data": "nama" },
-            //         { "data": "kota" }
-            //         ]
-            //         });
-
-            //         table.clear();
-
-            //         var result = jQuery.parseJSON(JSON.stringify(data));
-            //         //console.log(result);
-            //         var i = 1;
-            //         $.each(result, function(id, val) 
-            //         {
-
-            //             table.row.add({
-            //             "no":i,
-            //             "nama":val['nama'],
-            //             "kota":val['kota']
-            //             }).draw();
-            //             i = i + 1;
-            //             table.row.find
-            //         });
-            //     }
-            //     });
-
-        });
     </script>
+
 @endpush

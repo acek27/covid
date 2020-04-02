@@ -26,6 +26,8 @@
 
 <!-- Style customizer (Remove these two lines please) -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/style-customizer.css')}}">
+<link rel="stylesheet" href="{{asset('/tema/map/leaflet.css')}}">
+<script src="{{asset('/tema/map/leaflet-src.js')}}"></script>
 <link href="#" data-style="styles" rel="stylesheet">
 
 

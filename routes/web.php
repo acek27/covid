@@ -32,6 +32,7 @@
 Route::get('/', 'IndexDepanController@index');
 
 Route::get('/getrujukan', 'IndexDepanController@get_rujukan')->name('get.rujukan');
+Route::get('/getmap', 'IndexDepanController@get_map')->name('get.map');
 
 // Berita-----------------------------------------------------------------------------------
 
