@@ -26,10 +26,10 @@
 
 <!-- Style customizer (Remove these two lines please) -->
 <link rel="stylesheet" href="{{asset('/tema/frontend/css/style-customizer.css')}}">
-<link rel="stylesheet" href="{{asset('/tema/map/leaflet.css')}}">
-<script src="{{asset('/tema/map/leaflet-src.js')}}"></script>
+{{--<link rel="stylesheet" href="{{asset('/tema/map/leaflet.css')}}">--}}
+{{--<script src="{{asset('/tema/map/leaflet-src.js')}}"></script>--}}
 <link href="#" data-style="styles" rel="stylesheet">
 
-
+@stack('css')
 <!-- Modernizr JS -->
 <script src="{{asset('/tema/frontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>

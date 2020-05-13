@@ -234,11 +234,11 @@
       'mysql' => 
       array (
         'driver' => 'mysql',
-        'host' => '192.168.99.99',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'covid_19',
-        'username' => 'covid',
-        'password' => 'apu5apu5',
+        'username' => 'root',
+        'password' => 'acek27',
         'unix_socket' => '',
         'charset' => 'utf8',
         'collation' => 'utf8_unicode_ci',
@@ -249,11 +249,11 @@
       'pgsql' => 
       array (
         'driver' => 'pgsql',
-        'host' => '192.168.99.99',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'covid_19',
-        'username' => 'covid',
-        'password' => 'apu5apu5',
+        'username' => 'root',
+        'password' => 'acek27',
         'charset' => 'utf8',
         'prefix' => '',
         'schema' => 'public',
@@ -262,11 +262,11 @@
       'sqlsrv' => 
       array (
         'driver' => 'sqlsrv',
-        'host' => '192.168.99.99',
+        'host' => 'localhost',
         'port' => '3306',
         'database' => 'covid_19',
-        'username' => 'covid',
-        'password' => 'apu5apu5',
+        'username' => 'root',
+        'password' => 'acek27',
         'charset' => 'utf8',
         'prefix' => '',
       ),

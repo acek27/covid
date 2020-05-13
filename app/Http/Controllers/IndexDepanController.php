@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Posko;
+use App\Rumahsinggah;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Alamat;
@@ -41,9 +43,27 @@ class IndexDepanController extends Controller
 
         $total = DB::table('v_jumlah')->first();
 
+        $posko = Posko::join('mst_kecamatan', 'mst_kecamatan.ID_KEC', '=', 'poskos.kd_kec')->get();
+        $rumah = Rumahsinggah::join('desa', 'rumahsinggahs.id_desa', '=', 'desa.id_desa')
+            ->join('mst_kecamatan', 'desa.id_kecamatan', '=', 'mst_kecamatan.ID_KEC')
+            ->get();
+        $urlindonesia = 'https://api.kawalcorona.com/indonesia';
+        $Client = new Client(['headers' => [
+            'x-api-version' => '2',
+            'Accept' => 'application/json'
+        ]]);
+        $response = $Client->get($urlindonesia);
+        $indonesia = json_decode((string)$response->getBody()->getContents(), true);
 
-        return view('depan.depan', compact('almt', 'menus', 'data', 'posts1', 'posts2', 'total'));
-//        return response()->json($data);
+        $urlprovinsi = 'https://api.kawalcorona.com/indonesia/provinsi';
+        $Client = new Client(['headers' => [
+            'x-api-version' => '2',
+            'Accept' => 'application/json'
+        ]]);
+        $respon = $Client->get($urlprovinsi);
+        $provinsi = json_decode((string)$respon->getBody()->getContents(), true);
+//        return $provinsi;
+        return view('depan.depan', compact('almt', 'menus', 'data', 'posts1', 'posts2', 'total','rumah','posko','indonesia','provinsi'));
     }
 
     public function get_rujukan()

@@ -2079,6 +2079,17 @@
     }
 }
 
+.directory-listing-google-map-area2 #gmap2 {
+    height: 620px;
+;
+}
+
+@media (min-width: 1400px) {
+    .directory-listing-google-map-area2 #gmap2 {
+        height: 90vh;
+    }
+}
+
 .directory-listing-google-map-area .find-home-box {
     position: absolute;
     top: 50%;

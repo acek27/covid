@@ -1,4 +1,11 @@
 @extends('depan.bagian.page')
+@push('css')
+    <style>
+        .gm-ui-hover-effect #gmap {
+            display: none !important;
+        }
+    </style>
+@endpush
 @section('content')
     <!-- DICECTORY LISTING GOOGLE MAP AREA START -->
     <div class="directory-listing-google-map-area">
@@ -71,6 +78,83 @@
             </div>
         </div>
         <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-2 text-center">
+                        <h2>Data Terbaru Indonesia dan Provinsi</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="blog-details-title-time">
+                        <!-- service-item -->
+                        <div class="about-sheltek-info">
+                            <div class="service-item-info">
+                                @foreach($indonesia as $indo)
+                                    <h5>{{$indo['name']}}</h5>
+                                    <table class="col-lg-12">
+                                        <tr>
+                                            <td><strong>Kasus Positif</strong></td>
+                                            <td><h6>: {{$indo['positif']}}</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Kasus Sembuh</strong></td>
+                                            <td><h6>: {{$indo['sembuh']}}</h6></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Kasus Meninggal</strong></td>
+                                            <td><h6>: {{$indo['meninggal']}}</h6></td>
+                                        </tr>
+                                    </table>
+                                @endforeach
+                                <br>
+                                    <a href="#"><small><i>info selengkapnya...</i></small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog-details-title-time">
+                        <div class="about-sheltek-info">
+                            <div class="service-item-info">
+                                @foreach($provinsi[1] as $key=>$prov)
+                                    @if($prov['Kode_Provi'] == 35)
+                                        <h5>{{$prov['Provinsi']}}</h5>
+                                        <table class="col-lg-12">
+                                            <tr>
+                                                <td><strong>Kasus Positif</strong></td>
+                                                <td><h6>: {{$prov['Kasus_Posi']}}</h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kasus Sembuh</strong></td>
+                                                <td><h6>: {{$prov['Kasus_Semb']}}</h6></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kasus Meninggal</strong></td>
+                                                <td><h6>: {{$prov['Kasus_Meni']}}</h6></td>
+                                            </tr>
+                                        </table>
+                                    @endif
+                                @endforeach
+                                <br>
+                                    <a href="#"><small><i>info selengkapnya...</i></small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="directory-listing-google-map-area2">
+            {{--            nek iki diklik class perbatasan() aktif--}}
+            <button id="perbatasan" class="btn btn-primary">Perbatasan</button>
+            {{--            nek iki diklik class rumahsinggah() aktif--}}
+            <button id="rumahsinggah" class="btn btn-primary">Rumah Singgah</button>
+            <div id="gmap2"></div>
+        </div>
         <!-- ABOUT SHELTEK AREA START -->
         <!-- <div class="about-sheltek-area ptb-115"> -->
         <div class="container">
@@ -112,6 +196,7 @@
         </div>
         <!-- </div> -->
         <!-- ABOUT SHELTEK AREA END -->
+
 
         <!-- SERVICES AREA START -->
         <div class="services-area pb-60">
@@ -626,15 +711,102 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
     <script type="text/javascript">
+
+        function rumahsinggah() {
+            //map posko
+            var mapOptions2 = {
+                zoom: 11,
+                scrollwheel: false,
+                center: {lat: -7.7750532, lng: 113.9952789},
+            };
+
+            var map2 = new google.maps.Map(document.getElementById('gmap2'),
+                mapOptions2);
+
+            google.maps.event.addListener(map2, 'click', function (event) {
+                taruhMarker(this, event.latLng);
+                geocoder.geocode({
+                    'latLng': event.latLng
+                }, function (results, status) {
+                    alert('Geocoder failed due to: ' + status);
+                });
+            });
+            @foreach($rumah as $value)
+                x2{{$value->id}} = "{{$value->rs_lat}}";
+            y2{{$value->id}} = "{{$value->rs_long}}";
+            var namatempat{{$value->id}} = "{{$value->nama_tempat}}";
+            var alamat{{$value->id}} = "{{$value->alamat}}";
+            var desa{{$value->id}} = "{{$value->nama_desa}}";
+            var kecamatan{{$value->id}} = "{{$value->NAMA_KEC}}";
+            var dayatampung{{$value->id}} = "{{$value->daya_tampung}}";
+            var koordinator{{$value->id}} = "{{$value->koordinator}}";
+            var keterangan{{$value->id}} = "{{$value->keterangan}}";
+            var telpkoordinator{{$value->id}} = "{{$value->telpkoordinator}}";
+            var dokumentasi{{$value->id}} = "{{$value->dokumentasi}}";
+            var ketrs = '<Strong style="font-size:18px">' + namatempat{{$value->id}}+ '</Strong><br><br>'
+                + '<img style="display: block; max-width:500px; max-height:350px; width: auto; height: auto;" src="{{asset('tema/map/rumahsinggah')}}/' + dokumentasi{{$value->id}}+ '">'
+                + '<br><br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Alamat :  ' + alamat{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Desa :  ' + desa{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Kecamatan :  ' + kecamatan{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Daya Tampung :  ' + dayatampung{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Koordinator :  ' + koordinator{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Kontak :  ' + telpkoordinator{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">'
+                + 'Keterangan :  ' + keterangan{{$value->id}}+ '</Strong>' +
+                '<br><Strong style="color:#17a2b8;font-size:14px">';
+
+            var icon2 = {
+                @if($value->kategori == 1)
+                url: "{{asset('tema/frontend/images/icons/rs.png')}}", // url
+                @else
+                url: "{{asset('tema/frontend/images/icons/posko.png')}}", // url
+                @endif
+                scaledSize: new google.maps.Size(38, 38), // scaled size
+                origin: new google.maps.Point(0, 0), // origin
+                anchor: new google.maps.Point(20, 35), // anchor
+                labelOrigin: new google.maps.Point(20, 45),
+            };
+            var loc2 = new google.maps.Marker({
+                position: new google.maps.LatLng(x2{{$value->id}}, y2{{$value->id}}),
+                map: map2,
+                icon: icon2,
+                html: ketrs,
+                labelClass: "labels",
+                label: {
+                    color: 'black',
+                    fontSize: '12px',
+                    fontWeight: "bold",
+                    text: namatempat{{$value->id}}
+                }
+            });
+
+            var infowindow2 = new google.maps.InfoWindow();
+            google.maps.event.addListener(loc2, 'click', function (event) {
+                infowindow2.setContent(this.html);
+                infowindow2.setPosition(event.latLng);
+                infowindow2.open(map2);
+            });
+            @endforeach
+        }
+
         function initialize() {
             geocoder = new google.maps.Geocoder();
             var mapOptions = {
                 zoom: 11,
-                scrollwheel: false,
-                center: {lat: -7.7050532, lng: 113.9952789},
+                scrollwheel: true,
+                center: {lat: -7.5050532, lng: 113.9952789},
             };
+
+
             var map = new google.maps.Map(document.getElementById('gmap'),
                 mapOptions);
+
             //even listner ketika peta diklik
             google.maps.event.addListener(map, 'click', function (event) {
                 taruhMarker(this, event.latLng);
@@ -651,7 +823,7 @@
                 preserveViewport: false,
                 map: map
             });
-            {{--/** letak file kml */--}}
+            /** letak file kml */
             geoXml.parse("{{asset('tema/map/situbondokab.kml')}}");
 
             @foreach($data as $values)
@@ -661,41 +833,22 @@
             var odp{{$values->kd_kec}} = "{{$values->jml_odp}}";
             var pdp{{$values->kd_kec}} = "{{$values->jml_pdp}}";
             var positif{{$values->kd_kec}} = "{{$values->jml_positif}}";
-            var keterangan = '<Strong style="font-size:18px">' + nama{{$values->kd_kec}}+ '</Strong>' +
-                '<br><Strong style="color:#17a2b8;font-size:18px">'
+            var keterangan = '<Strong style="color:black;font-size:13px">'
+                + nama{{$values->kd_kec}}+ '<br></Strong>' +
+                '<Strong style="color:#17a2b8;font-size:12px">'
                 + 'ODP :  ' + odp{{$values->kd_kec}}+ '</Strong>' +
-                '<br><Strong style="color:#ffc107;font-size:18px">'
+                '<br><Strong style="color:#ffc107;font-size:12px">'
                 + 'PDP :  ' + pdp{{$values->kd_kec}}+ '</Strong>' +
-                '<br><Strong style="color:#dc3545;font-size:18px">'
-                + 'Positif :  ' + positif{{$values->kd_kec}}+ '</Strong>';
+                '<br><Strong style="color:#dc3545;font-size:12px">'
+                + 'Confirm :  ' + positif{{$values->kd_kec}}+ '</Strong>';
 
-            var icon = {
-                url: "{{asset('tema/frontend/images/icons/mark-place-04.png')}}", // url
-                scaledSize: new google.maps.Size(28, 40), // scaled size
-                origin: new google.maps.Point(0, 0), // origin
-                anchor: new google.maps.Point(0, 0), // anchor
-                labelOrigin: new google.maps.Point(15, 45),
-            };
-            var loc = new google.maps.Marker({
+
+            infowindow = new google.maps.InfoWindow({
                 position: new google.maps.LatLng(x{{$values->kd_kec}}, y{{$values->kd_kec}}),
-                map: map,
-                icon: icon,
-                html: keterangan,
-                labelClass: "labels",
-                label: {
-                    color: 'white',
-                    fontSize: '10px',
-                    fontWeight: "bold",
-                    text: nama{{$values->kd_kec}}
-                }
+                content: keterangan
             });
+            infowindow.open(map);
 
-            var infowindow = new google.maps.InfoWindow();
-            google.maps.event.addListener(loc, 'click', function (event) {
-                infowindow.setContent(this.html);
-                infowindow.setPosition(event.latLng);
-                infowindow.open(map);
-            });
                     @endforeach
             var styles = [
                     {
@@ -787,10 +940,10 @@
                     }
                 ]
             map.setOptions({styles: styles});
+
         }
 
-        // event jendela di-load
         google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load', rumahsinggah());
     </script>
-
 @endpush
